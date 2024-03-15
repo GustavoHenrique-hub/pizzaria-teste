@@ -1,6 +1,7 @@
 package br.senaisp.edu.model;
 
 public class Cliente {
+	private Integer id;
 	private String nome;
 	private String tel;
 	private String rua;
@@ -17,6 +18,15 @@ public class Cliente {
 		this.rua = rua;
 		this.numero = numero;
 		this.bairro = bairro;
+	}
+
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getNome() {
