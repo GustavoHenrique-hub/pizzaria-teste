@@ -25,9 +25,13 @@ public class ServClientUpdate extends HttpServlet {
 		Cliente c1 = new Cliente(name, tel, street, number, neighbor);
 		c1.setId(id);
 		
-		new ClienteDAO().updateCliente(c1);
+		ClienteDAO cliDAO = new ClienteDAO();
+		
+		cliDAO.updateCliente(c1);
 			
-		res.getWriter().append("<html><h1>" + c1 +"</h1></html>");
+		for(Cliente c : cliDAO.getClientes()) {
+			res.getWriter().append("<html><h1>" + c +"</h1></html>");
+		}
 		
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block

@@ -71,7 +71,9 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "<br> nome = " 
+		return "<br> id =  " 
+				+ id
+				+ ", <br> nome = " 
 				+ nome 
 				+ ", <br> tel = " 
 				+ tel 

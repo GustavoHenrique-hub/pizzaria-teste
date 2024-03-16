@@ -15,16 +15,14 @@ public class ServClientSelect extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		try {
-			Integer id =Integer.parseInt( req.getParameter("ID"));
-			
-			Cliente c1 = new Cliente();
-			c1.setId(id);
 			
 			ClienteDAO cliDAO = new ClienteDAO();
 				
-			cliDAO.selectCliente(c1);
+			for(Cliente c : cliDAO.getClientes()) {
+				res.getWriter().append("<html><h1>" + c +"</h1></html>");
+			}
 			
-			res.getWriter().append("<html><h1>" + c1 +"</h1></html>");
+			
 			
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
